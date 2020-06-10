@@ -1,8 +1,7 @@
-import { Request, Response } from 'express';
-import { api } from '../../config/api/version';
+const api = require('../../config/api/version');
 
 class RootController {
-  async index(request: Request, response: Response) {
+  async index(request, response) {
     response.status(200).json({
       ...api.body,
       respositorie: 'https://github.com/gabriel-roque/pokemon-api',
@@ -21,4 +20,4 @@ class RootController {
   }
 }
 
-export default RootController;
+module.exports = RootController;

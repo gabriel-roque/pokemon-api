@@ -12,4 +12,4 @@ let api = {
 
 api.app_url = `${process.env.APP_URL}${api.prefix}`;
 
-export { api };
+module.exports = api;
