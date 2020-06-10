@@ -1,4 +1,5 @@
 const Pokemon = require('../models/pokemon.model');
+const { validateRequest } = require('../services/pokemon.services');
 
 module.exports = {
   async index(request, response) {
@@ -8,10 +9,8 @@ module.exports = {
   },
 
   async store(request, response) {
-    const { tipo, treinador } = request.body;
+    const result = await validateRequest(request.body);
 
-    const pokemon = await Pokemon.create({ tipo, treinador, nivel: 1 });
-
-    return response.status(200).json(pokemon);
+    return response.status(result.status).json(result.response);
   },
 };

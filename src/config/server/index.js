@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 // MIDDLESWARES
-initMiddlewares(app);
+// initMiddlewares(app);
 
 // PREFIX END-POINT
 app.use(api.prefix, routes);
