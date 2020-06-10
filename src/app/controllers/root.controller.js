@@ -1,6 +1,6 @@
 const api = require('../../config/api/version');
 
-class RootController {
+module.exports = {
   async index(request, response) {
     response.status(200).json({
       ...api.body,
@@ -17,7 +17,5 @@ class RootController {
         },
       },
     });
-  }
-}
-
-module.exports = RootController;
+  },
+};
