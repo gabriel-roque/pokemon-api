@@ -2,15 +2,19 @@ const pokemonA = {
   id: 1,
   tipo: 'pikachu',
   treinador: 'Thiago',
-  nivel: 2,
+  nivel: 3,
 };
 
 const pokemonB = {
   id: 1,
   tipo: 'charizad',
   treinador: 'Thiago',
-  nivel: 4,
+  nivel: 1,
 };
+
+function serializedResponsePokemons(vencendor, perdedor) {
+  return { vencendor, perdedor };
+}
 
 function generateRandomNumber(min, max) {
   return min + Math.floor((max - min + 1) * Math.random());
@@ -26,9 +30,6 @@ function calcularChances(pokemonMaiorLvl, pokemonMenorLvl) {
   const chancesPokemonMaiorLvl = regraDe3(pokemonMaiorLvl.nivel, 100, diferencaNiveis);
   const chancesPokemonMenorLvl = 100 - chancesPokemonMaiorLvl;
 
-  console.log('Chances do Pok Maior Nivel: ', chancesPokemonMaiorLvl);
-  console.log('Chances de Pok Menor Nivel: ', chancesPokemonMenorLvl);
-
   return { chancesPokemonMaiorLvl, chancesPokemonMenorLvl };
 }
 
@@ -36,19 +37,18 @@ function calcularProbabilidades(chancesMenorLvl) {
   const probabilidadeMaiorLvl = generateRandomNumber(0, 100);
   const probabilidadeMenorLvl = generateRandomNumber(0, chancesMenorLvl);
 
-  console.log('Probabilidade Pok Maior Nivel: ', probabilidadeMaiorLvl);
-  console.log('Probabilidade Pok Menor Nivel: ', probabilidadeMenorLvl);
-
   return { probabilidadeMaiorLvl, probabilidadeMenorLvl };
 }
 
 function verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB) {
   if (probabilidadeMaiorLvl > probabilidadeMenorLvl) {
     console.log('Pokemon de Maior Nivel ganhador');
+    return serializedResponsePokemons(pokemonA, pokemonB);
   } else if (probabilidadeMaiorLvl === probabilidadeMenorLvl) {
     battlePokemons(pokemonA, pokemonB);
   } else {
     console.log('Pokemon de Menor Nivel ganhador');
+    return serializedResponsePokemons(pokemonB, pokemonA);
   }
 }
 
@@ -56,22 +56,25 @@ const battlePokemons = (pokemonA, pokemonB) => {
   if (pokemonA.nivel > pokemonB.nivel) {
     const { chancesPokemonMenorLvl } = calcularChances(pokemonA, pokemonB);
     const { probabilidadeMaiorLvl, probabilidadeMenorLvl } = calcularProbabilidades(chancesPokemonMenorLvl);
-    verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB);
+    return verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB);
   }
   if (pokemonB.nivel > pokemonA.nivel) {
     const { chancesPokemonMenorLvl } = calcularChances(pokemonB, pokemonA);
     const { probabilidadeMaiorLvl, probabilidadeMenorLvl } = calcularProbabilidades(chancesPokemonMenorLvl);
-    verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB);
+    return verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB);
   }
   if (pokemonA.nivel === pokemonB.nivel) {
     const ganhador = generateRandomNumber(1, 2);
-    ganhador === 1 ? console.log('A ganhou') : console.log('B ganhou');
+    return ganhador === 1
+      ? serializedResponsePokemons(pokemonA, pokemonB)
+      : serializedResponsePokemons(pokemonB, pokemonA);
   }
 };
 
-battlePokemons(pokemonA, pokemonB);
+console.log(battlePokemons(pokemonA, pokemonB));
 
-// regra de 3 para determinar a peso de ocrrencia, probabilidade
+module.exports = { battlePokemons };
+
 /* 
   Nota do Desenvolvedor - Algoritmo de batalha de Pokemons
 

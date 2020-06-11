@@ -12,4 +12,18 @@ async function validateRequest(body) {
   return { status: 200, response: pokemon };
 }
 
-module.exports = { validateRequest };
+async function findPokemon(id) {
+  try {
+    const pokemon = await Pokemon.findByPk(id);
+    if (pokemon === null) throw notFound;
+    return pokemon;
+  } catch (e) {
+    throw notFound;
+  }
+}
+
+async function upgradeLevelPokemon(id) {}
+async function downgradeLevelPokemon(id) {}
+async function destroyPokemon(id) {}
+
+module.exports = { validateRequest, findPokemon };
