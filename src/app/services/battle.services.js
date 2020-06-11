@@ -1,17 +1,3 @@
-const pokemonA = {
-  id: 1,
-  tipo: 'pikachu',
-  treinador: 'Thiago',
-  nivel: 3,
-};
-
-const pokemonB = {
-  id: 1,
-  tipo: 'charizad',
-  treinador: 'Thiago',
-  nivel: 1,
-};
-
 function serializedResponsePokemons(vencendor, perdedor) {
   return { vencendor, perdedor };
 }
@@ -42,12 +28,10 @@ function calcularProbabilidades(chancesMenorLvl) {
 
 function verificarGanhador(probabilidadeMaiorLvl, probabilidadeMenorLvl, pokemonA, pokemonB) {
   if (probabilidadeMaiorLvl > probabilidadeMenorLvl) {
-    console.log('Pokemon de Maior Nivel ganhador');
     return serializedResponsePokemons(pokemonA, pokemonB);
   } else if (probabilidadeMaiorLvl === probabilidadeMenorLvl) {
     battlePokemons(pokemonA, pokemonB);
   } else {
-    console.log('Pokemon de Menor Nivel ganhador');
     return serializedResponsePokemons(pokemonB, pokemonA);
   }
 }
@@ -70,8 +54,6 @@ const battlePokemons = (pokemonA, pokemonB) => {
       : serializedResponsePokemons(pokemonB, pokemonA);
   }
 };
-
-console.log(battlePokemons(pokemonA, pokemonB));
 
 module.exports = { battlePokemons };
 

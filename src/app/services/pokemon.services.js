@@ -22,8 +22,22 @@ async function findPokemon(id) {
   }
 }
 
-async function upgradeLevelPokemon(id) {}
-async function downgradeLevelPokemon(id) {}
-async function destroyPokemon(id) {}
+async function upgradeLevelPokemon(id) {
+  const pokemon = await findPokemon(id);
+  return await pokemon.update({ nivel: pokemon.nivel + 1 });
+}
 
-module.exports = { validateRequest, findPokemon };
+async function downgradeLevelPokemon(id) {
+  const pokemon = await findPokemon(id);
+  if (pokemon.nivel === 1) {
+    await destroyPokemon(id);
+  }
+  return await pokemon.update({ nivel: pokemon.nivel - 1 });
+}
+
+async function destroyPokemon(id) {
+  const pokemon = await findPokemon(id);
+  await pokemon.destroy();
+}
+
+module.exports = { validateRequest, findPokemon, upgradeLevelPokemon, downgradeLevelPokemon };
