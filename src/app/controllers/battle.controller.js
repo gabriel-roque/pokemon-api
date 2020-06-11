@@ -10,7 +10,7 @@ module.exports = {
       const pokemonB = await findPokemon(pokemonBId);
       const resultBattle = battlePokemons(pokemonA, pokemonB);
 
-      const vencedor = await upgradeLevelPokemon(resultBattle.vencendor.id);
+      const vencedor = await upgradeLevelPokemon(resultBattle.vencedor.id);
       const perdedor = await downgradeLevelPokemon(resultBattle.perdedor.id);
 
       return response.status(200).json({ vencedor, perdedor });

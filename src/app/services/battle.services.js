@@ -1,5 +1,5 @@
-function serializedResponsePokemons(vencendor, perdedor) {
-  return { vencendor, perdedor };
+function serializedResponsePokemons(vencedor, perdedor) {
+  return { vencedor, perdedor };
 }
 
 function generateRandomNumber(min, max) {
@@ -55,7 +55,7 @@ const battlePokemons = (pokemonA, pokemonB) => {
   }
 };
 
-module.exports = { battlePokemons };
+module.exports = { battlePokemons, generateRandomNumber, serializedResponsePokemons };
 
 /* 
   Nota do Desenvolvedor - Algoritmo de batalha de Pokemons
@@ -116,9 +116,9 @@ module.exports = { battlePokemons };
         > Pokemon A tira de 0 a 100 e pokemon B tira de 0 a 33
 
         > Se Pokemon A tirar a probabilidade entre 0 e 100 e pokemon B tirar entre 0 e 33 e 
-        a probabilidade de A for maior que B, logo A é vencendor.
+        a probabilidade de A for maior que B, logo A é vencedor.
 
         > Se Pokemon A tirar a probabilidade entre 0 e 100 e pokemon B tirar entre 0 e 33 e 
-        a probabilidade de B for maior que A, logo B é vencendor.
+        a probabilidade de B for maior que A, logo B é vencedor.
 
 */
