@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { Model, DataTypes } = require('sequelize');
 
 class Pokemon extends Model {
@@ -15,4 +17,4 @@ class Pokemon extends Model {
   }
 }
 
-module.exports = Pokemon;
+module.exports = Pokemon.schema(process.env.DB_NAME_SCHEMA);

@@ -6,8 +6,8 @@ module.exports = {
     const { pokemonAId, pokemonBId } = request.params;
 
     try {
-      let pokemonA = await findPokemon(pokemonAId);
-      let pokemonB = await findPokemon(pokemonBId);
+      const pokemonA = await findPokemon(pokemonAId);
+      const pokemonB = await findPokemon(pokemonBId);
       const resultBattle = battlePokemons(pokemonA, pokemonB);
 
       const vencedor = await upgradeLevelPokemon(resultBattle.vencendor.id);
