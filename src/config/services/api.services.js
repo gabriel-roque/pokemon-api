@@ -1,7 +1,8 @@
 const axios = require('axios');
+const { app_url } = require('../api/version');
 
 const api = axios.create({
-  baseURL: process.env.APP_URL || 'http://localhost:3333',
+  baseURL: app_url || 'http://localhost:3333',
 });
 
-module.exports = api;
+module.exports = { api };

@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const VERSION = 'v1';
 
 let api = {
