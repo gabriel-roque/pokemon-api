@@ -10,4 +10,7 @@ module.exports = {
     timestamps: false,
     schema: process.env.DB_NAME_SCHEMA,
   },
+  dialectOptions: {
+    options: { encrypt: true },
+  },
 };
