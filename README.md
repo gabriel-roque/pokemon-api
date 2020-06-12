@@ -14,6 +14,15 @@
    <a href="https://www.conventionalcommits.org/en/v1.0.0/"><img src="https://img.shields.io/badge/Commitizen-friendly-green"></a>
 </p>
 
+<p align="center">
+   <a href="https://pokemon-api-challanger.herokuapp.com/v1/api/"><img src="https://raw.githubusercontent.com/gabriel-roque/design/master/btn-open-api.png" width="200"></a>
+</p>
+
+# ⚓ Summary
+
+- [Resource Pokemons](#-resource-pokemons)
+- [Resource Battle](#-resource-battle)
+
 ## 💡 Introduction
 
 🐅 A simple API REST pokemon battle.
@@ -61,6 +70,89 @@ $ npm start
 > Check in **development** at http://localhost:3333/v1/api/
 
 > Check in **production** at #
+
+### 🎓 Resource Pokemons
+
+✅ **GET** `/v1/api/pokemons`
+
+↩ **Response** `HTTP Code 200 - OK`
+
+```json
+[
+  {
+    "id": 1,
+    "tipo": "pikachu",
+    "treinador": "Gabriel",
+    "nivel": 12
+  }, {
+    "id": 2,
+    "tipo": "charizard",
+    "treinador": "Anderson",
+    "nivel": 11
+  }
+]
+```
+[🔝 back to top](#top)
+
+<br>
+
+✅ **POST** `/v1/api/pokemons`
+
+➡ **Request**
+
+| Attribute | Type     |
+| --------- | -------- |
+| tipo      | `String` |
+| treinador | `String` |
+
+```json
+{
+ "tipo": "pikachu",
+ "treinador": "Gabriel",
+}
+```
+
+↩ **Response** `HTTP Code 200 - OK`
+
+```json
+{
+  "id": 1,
+  "tipo": "pikachu",
+  "treinador": "Gabriel",
+  "nivel": 12
+},
+```
+[🔝 back to top](#top)
+
+<br>
+
+✅ **PUT** `/v1/api/pokemons/:id`
+
+➡ **Request**
+
+| Attribute | Type     |
+| --------- | -------- |
+| treinador | `String` |
+
+```json
+{
+  "treinador": "Anderson",
+}
+```
+
+↩ **Response** `HTTP Code 204 - No Content`
+
+[🔝 back to top](#top)
+
+<br>
+
+✅ **DELETE** `/v1/api/pokemons/:id`
+
+↩ **Response** `HTTP Code 204 - No Content`
+
+[🔝 back to top](#top)
+
+<br>
 
 ## 👤 Author
 
