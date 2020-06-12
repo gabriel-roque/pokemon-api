@@ -9,6 +9,7 @@
 <p align="center">
    <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node-12.x-green"></a>
    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-4.x-blue"></a>
+   <a href="https://sequelize.org/"><img src="https://img.shields.io/badge/Sequelize-5.x-purple"></a>
    <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-6.x-red"></a>
    <a href="https://www.conventionalcommits.org/en/v1.0.0/"><img src="https://img.shields.io/badge/Commitizen-friendly-green"></a>
 </p>
