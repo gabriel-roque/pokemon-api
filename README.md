@@ -152,8 +152,6 @@ $ npm start
 
 [🔝 back to top](#top)
 
-<br>
-
 ### ⚔️ Resource Battle
 
 ✅ **POST** `/v1/api/batalhar/:pokemonAId/:pokemonBId`
