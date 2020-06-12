@@ -16,10 +16,8 @@ describe('groups integration tests end-points resource [pokemon]', () => {
   });
 
   it('should return pokemon created [POST]', async () => {
-    let pokemon = {
-      tipo: 'pikachu',
-      treinador: 'Gabriel',
-    };
+    let pokemon = { tipo: 'pikachu', treinador: 'Gabriel' };
+
     await api.post('/pokemons', pokemon).then((resp) => {
       expect(resp.status).toEqual(200);
       pokemonTest = resp.data;
