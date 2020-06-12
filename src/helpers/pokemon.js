@@ -1,9 +1,19 @@
 const validPokemons = ['charizard', 'mewtwo', 'pikachu'];
 
 function checkPokemons(receivedPokemon) {
-  pokemons = validPokemons.filter((pokemon) => receivedPokemon === pokemon);
+  receivedPokemon = String(receivedPokemon).toLocaleLowerCase().trim();
+
+  let pokemons = validPokemons.filter((pokemon) => receivedPokemon === pokemon);
 
   return pokemons.length === 1 ? true : false;
 }
 
-module.exports = { checkPokemons };
+function factoryPokemon(pokemon, trainer) {
+  return {
+    tipo: String(pokemon).toLocaleLowerCase().trim(),
+    treinador: trainer,
+    nivel: 1,
+  };
+}
+
+module.exports = { checkPokemons, factoryPokemon };
