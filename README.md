@@ -71,7 +71,7 @@ $ npm start
 
 > Check in **production** at #
 
-### 🎓 Resource Pokemons
+### 🐣 Resource Pokemons
 
 ✅ **GET** `/v1/api/pokemons`
 
@@ -102,7 +102,7 @@ $ npm start
 
 | Attribute | Type     |
 | --------- | -------- |
-| tipo      | `String` |
+| tipo      | `String [mewtwo / charizard / pikachu]` |
 | treinador | `String` |
 
 ```json
@@ -149,6 +149,33 @@ $ npm start
 ✅ **DELETE** `/v1/api/pokemons/:id`
 
 ↩ **Response** `HTTP Code 204 - No Content`
+
+[🔝 back to top](#top)
+
+<br>
+
+### ⚔️ Resource Battle
+
+✅ **POST** `/v1/api/batalhar/:pokemonAId/:pokemonBId`
+
+↩ **Response** `HTTP Code 200 - OK`
+
+```json
+{
+  "vencedor": {
+    "id": 1,
+    "tipo": "pikachu",
+    "treinador": "Anderson",
+    "nivel": 2
+  },
+  "perdedor": {
+    "id": 2,
+    "tipo": "charizard",
+    "treinador": "Gabriel",
+    "nivel": 0
+  }
+}
+```
 
 [🔝 back to top](#top)
 
