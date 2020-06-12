@@ -21,7 +21,7 @@
 # ⚓ Summary
 
 - [Resource Pokemons](#-resource-pokemons)
-- [Resource Battle](#-resource-battle)
+- [Resource Battle](#%EF%B8%8F-resource-battle)
 
 ## 💡 Introduction
 
@@ -151,6 +151,8 @@ $ npm start
 ↩ **Response** `HTTP Code 204 - No Content`
 
 [🔝 back to top](#top)
+
+<br>
 
 ### ⚔️ Resource Battle
 
