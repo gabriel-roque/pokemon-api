@@ -69,7 +69,7 @@ $ npm start
 
 > Check in **development** at http://localhost:3333/v1/api/
 
-> Check in **production** at #
+> Check in **production** at https://pokemon-api-challanger.herokuapp.com/v1/api
 
 ### 🐣 Resource Pokemons
 
