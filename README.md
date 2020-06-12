@@ -1,6 +1,12 @@
 <span id="top"></span>
 
 <p align="center">
+  <img src="https://github.com/gabriel-roque/design/blob/master/mewtwo.gif?raw=true" width="120">
+  <img src="https://raw.githubusercontent.com/gabriel-roque/design/master/pokemon-battle-api-logo.png" width="300">
+  <img src="https://raw.githubusercontent.com/gabriel-roque/design/master/pikachu_run.gif" width="100">
+</p>
+
+<p align="center">
    <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/Node-12.x-green"></a>
    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-4.x-blue"></a>
    <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/NPM-6.x-red"></a>
@@ -25,14 +31,37 @@ $ git clone https://github.com/gabriel-roque/pokemon-api
 
 ```sh
 $ cp .env.example .env
+```
+### 1. Configure your .env
+
+```env
+APP_URL=
+DB_DIALECT=
+DB_HOST=
+DB_USERNAME=
+DB_PASSWORD=
+DB_NAME=
+DB_NAME_SCHEMA=
+```
+
+### 2. Run migrations in database
+
+```sh
+$ sequelize db:migrate
+```
+
+### 3. Run your app
+```sh
 $ npm run dev
+or
+$ npm start
 ```
 
 > Check in **development** at http://localhost:3333/v1/api/
 
 > Check in **production** at #
 
-## 👤 Authors
+## 👤 Author
 
 <p align="center">
   <a href="https://www.linkedin.com/in/gabriel-roque/">
